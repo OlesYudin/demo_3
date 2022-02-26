@@ -18,5 +18,5 @@
 ### <div align="center">Infrastructure scheme</div>
 
 <p align="center">
-  <img src="https://github.com/OlesYudin/demo_3/blob/main/images/Network%20infrastructure.png" alt="Scheme of creation VPC in AWS"/>
+  <img src="https://github.com/OlesYudin/demo_3/blob/main/images/Network%20infrastructure.jpg" alt="Scheme of creation VPC in AWS"/>
 </p>
