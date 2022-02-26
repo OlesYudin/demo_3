@@ -1,5 +1,7 @@
 # <div align="center">Creating network infrastructure on AWS Cloud Provider using Terraform</div>
 
+In this project was created VPC module with 2 private/public subnets including NAT, EIP, ALB. After creating network infrastructure in local machine build docker image and push to ECR repository. Than, in AWS creates ECS cluster with 2 Fargate nodes and from ECR clone last build and started to run in ECS Fargate Node. This docker image based on alpine image with Apache server. Web-page can generate password for you and show public and private IP-address.
+
 ### Structure of modules:
 
 1. [`cluster`](https://github.com/OlesYudin/demo_3/tree/main/modules/cluster "cluster")
