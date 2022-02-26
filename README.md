@@ -2,19 +2,21 @@
 
 ### Structure of modules:
 
-1. [`ec2`](https://github.com/OlesYudin/demo_2/tree/main/modules/ec2 "ec2")
-   - [Bastion Host](https://github.com/OlesYudin/demo_2/blob/main/modules/ec2/main.tf "Bastion Host") in public subnet of second AZ
-   - [2 instance](https://github.com/OlesYudin/demo_2/blob/main/modules/ec2/asg.tf "2 instance") in private subnet in eache AZ
-2. [`Security-group`](https://github.com/OlesYudin/demo_2/tree/main/modules/Security-group "Security-group")
-   - [sg_app](https://github.com/OlesYudin/demo_2/blob/main/modules/Security-group/main.tf#:~:text=resource%20%22aws_security_group%22%20%22-,sg_app,-%22%20%7B "sg_app") open 22 port for SSH connection to instance
-   - [sg_alb](https://github.com/OlesYudin/demo_2/blob/main/modules/Security-group/main.tf#:~:text=resource%20%22aws_security_group%22%20%22-,sg_alb,-%22%20%7B "sg_alb") open 80 port for HTTP to instance
-3. [`vpc`](https://github.com/OlesYudin/demo_2/tree/main/modules/vpc "vpc")
-   - [main.tf](https://github.com/OlesYudin/demo_2/blob/main/modules/vpc/main.tf "main.tf") create VPC with 2 public and 2 private subnets
-   - [alb.tf](https://github.com/OlesYudin/demo_2/blob/main/modules/vpc/alb.tf "alb.tf") create Application Load Balancer for instance in private subnets
-   - [nat.tf](https://github.com/OlesYudin/demo_2/blob/main/modules/vpc/nat.tf "nat.tf") create 1 Network Address Translation in first public subnet to route outbound traffic from instance in private subnet to Internet
+1. [`cluster`](https://github.com/OlesYudin/demo_3/tree/main/modules/cluster "cluster")
+   - [`alb.tf`](https://github.com/OlesYudin/demo_3/blob/main/modules/cluster/alb.tf "Application Load balancer") balance traffic between different AZ
+   - [`ecs.tf`](https://github.com/OlesYudin/demo_3/blob/main/modules/cluster/ecs.tf "Elactic Container Service") create task deffenition with ECS Fargate cluster
+   - [`iam.tf`](https://github.com/OlesYudin/demo_3/blob/main/modules/cluster/iam.tf "Identity Access Managment") create IAM role for ECS and ECR connection
+   - [`network.tf`](https://github.com/OlesYudin/demo_3/blob/main/modules/cluster/network.tf "Network") create VPC with 2 private/public subnets in 2 AZ. For private subnets was created 1 NAT with elastic IP
+   - [`security-group`](https://github.com/OlesYudin/demo_3/blob/main/modules/cluster/security-group.tf "security-group") create 2 SG for ALB and application
+2. [`ecr`](https://github.com/OlesYudin/demo_3/tree/main/modules/ecr "ecr")
+   - [`main.tf`](https://github.com/OlesYudin/demo_3/tree/main/modules/ecr/main.tf "main.tf") create Elastic Container Regestry with lifecycle policy
+3. [`init-build`](https://github.com/OlesYudin/demo_3/tree/main/modules/init-build "init-build")
+   - [`main.tf`](https://github.com/OlesYudin/demo_3/blob/main/modules/init-build/main.tf "main.tf") create null resource for of docker image and push to ECR
+4. [`s3`](https://github.com/OlesYudin/demo_3/tree/main/modules/s3 "s3")
+   - [`main.tf`](https://github.com/OlesYudin/demo_3/blob/main/modules/s3/main.tf "main.tf") create s3 bucket with some policy
 
 ### <div align="center">Infrastructure scheme</div>
 
 <p align="center">
-  <img src="https://github.com/OlesYudin/demo_3/blob/main/images/Network%20infrastructure%20DEMO_2.png" alt="Scheme of creation VPC in AWS"/>
+  <img src="https://github.com/OlesYudin/demo_3/blob/main/images/Network%20infrastructure.png" alt="Scheme of creation VPC in AWS"/>
 </p>
