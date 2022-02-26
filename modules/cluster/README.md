@@ -32,9 +32,10 @@ This module create:
 - 1 NAT for routing traffic in private subnets
 - 1 EIP for NAT
 
-| --- | ---- |
-| VPC | [172.31.0.0/16](https://github.com/OlesYudin/demo_3/blob/main/dev.auto.tfvars.example#:~:text=cidr_vpc%20%3D%20%22172.31.0.0/16%22 "172.31.0.0/16") |
-| Public Subnets | [172.31.1.0/24 , 172.31.2.0/24](https://github.com/OlesYudin/demo_3/blob/main/dev.auto.tfvars.example#:~:text=public_subnet%20%3D%20%5B%22172.31.1.0/24%22%2C%20%22172.31.2.0/24%22%5D "172.31.1.0/24 , 172.31.2.0/24") |
+| Value           | Description                                                                                                                                                                                                                  |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| VPC             | [172.31.0.0/16](https://github.com/OlesYudin/demo_3/blob/main/dev.auto.tfvars.example#:~:text=cidr_vpc%20%3D%20%22172.31.0.0/16%22 "172.31.0.0/16")                                                                          |
+| Public Subnets  | [172.31.1.0/24 , 172.31.2.0/24](https://github.com/OlesYudin/demo_3/blob/main/dev.auto.tfvars.example#:~:text=public_subnet%20%3D%20%5B%22172.31.1.0/24%22%2C%20%22172.31.2.0/24%22%5D "172.31.1.0/24 , 172.31.2.0/24")      |
 | Private Subnets | [172.31.11.0/24, 172.31.12.0/24](https://github.com/OlesYudin/demo_3/blob/main/dev.auto.tfvars.example#:~:text=private_subnet%20%3D%20%5B%22172.31.11.0/24%22%2C%20%22172.31.12.0/24%22%5D "172.31.11.0/24, 172.31.12.0/24") |
 
 ## [Security Group](https://github.com/OlesYudin/demo_3/blob/main/modules/cluster/security-group.tf "Security Group")
