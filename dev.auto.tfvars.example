@@ -51,4 +51,4 @@ image_tag = "latest"
 # Codebuild
 # ----------
 # Work in /home/student
-working_dir = "/home/student/Lesson_13-DEMO-3v2/App"
+working_dir = "/home/student/demo_3/App"
