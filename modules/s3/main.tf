@@ -1,5 +1,6 @@
 # Create S3 bucket
 resource "aws_s3_bucket" "s3_tf_state" {
+  # Dont forget to change bucket name
   bucket        = "${var.env}-demo-s3-${var.app_name}-${var.aws_user}-bucket"
   force_destroy = true
 
